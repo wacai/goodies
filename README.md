@@ -58,8 +58,9 @@ hook.attach(new Runnable(){
 		future.channel().close();
 	}
 });
+ChannelFuture f = future.sync();
 
-future.sync().channel().closeFuture().sync();
+f.channel().closeFuture().sync();
 ~~~~~~~
 
 在bind之后， sync操作进入block状态之前，首先注册一个ShutdownHook， 然后再进入sync并一直等待channel关闭退出。
