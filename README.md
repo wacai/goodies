@@ -27,6 +27,8 @@ String defaultMessage = messageSource.getMessage("non.existing.key", "缺省值"
 
 ## 服务进程生命周期控制
 
+### ShutdownLatch
+
 某些场景下(比如单一启动的dubbo服务)，如果你不希望主线程退出，可以使用ShutdownLatch：
 
 ~~~~~~~ {.java}
@@ -35,6 +37,8 @@ ShutdownLatch latch = new ShutdownLatch("your_domain_for_mbeans");
 latch.await();
 ~~~~~~~
 
+
+### ShutdownHook
 
 另外一种场景(比如使用netty的时候)，当要进入block状态之前，注册一个ShutdownHook， 依然可以给你一种优雅的结束自己服务的方式， 而不用粗鲁的CTRL+C。
 
