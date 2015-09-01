@@ -5,5 +5,5 @@ package com.wacai.goodies.lifecycle;
  * @since 2014-12-13
  */
 public interface ShutdownHookMBean {
-    void shtudown();
+    void shutdown();
 }

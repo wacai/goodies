@@ -33,7 +33,7 @@ public class ShutdownHook implements ShutdownHookMBean {
 
 
     @Override
-    public void shtudown() {
+    public void shutdown() {
         Runnable hook = shutdownHookHolder.get();
         if (hook != null) hook.run();
     }
